@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Ashish Gaming Pro | Cloud Gaming Anywhere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s;
+            background-color: #f1f5f9;
+        }
+        
+        .dark body {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+        }
+        
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .download-btn {
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            filter: brightness(110%);
+        }
+        
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            margin: 0 auto;
+        }
+        
+        /* Dark mode transitions */
+        .dark .dark\:bg-dark-card {
+            background-color: var(--dark-card);
+        }
+        
+        .dark .dark\:text-white {
+            color: var(--dark-text);
+        }
+        
+        .dark .dark\:border-gray-700 {
+            border-color: #334155;
+        }
+        
+        /* Animation for download button */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-900 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d2d5d343-7ac4-49fa-b449-47c8c7a124a1.png" alt="Ashish Gaming Logo" class="h-10 w-10 rounded-full">
+                    <a href="#" class="ml-3 text-xl font-bold text-gray-800 dark:text-white">Ashish Gaming Pro</a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Features</a>
+                    <a href="#download" class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Download</a>
+                    <a href="#faq" class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">FAQ</a>
+                </nav>
+                
+                <!-- Mobile menu button (hidden on desktop) -->
+                <button id="mobileMenuButton" class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Dark mode toggle -->
+                <button id="darkModeToggle" class="ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none">
+                    <span id="lightIcon" class="block dark:hidden"><i class="fas fa-moon"></i></span>
+                    <span id="darkIcon" class="hidden dark:block"><i class="fas fa-sun"></i></span>
+                </button>
+            </div>
+            
+            <!-- Mobile menu (hidden by default) -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <a href="#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Features</a>
+                <a href="#download" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Download</a>
+                <a href="#faq" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">FAQ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Cloud Gaming, Elevated</h1>
+                    <p class="text-xl mb-8 opacity-90">Play AAA games instantly on any device with Biki Cloud Gaming Pro. No downloads, no waiting.</p>
+                    
+                    <div id="dynamicDownload" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                        <!-- Platform detection will populate this -->
+                    </div>
+                    
+                    <p class="mt-4 text-sm opacity-80">Free to play. No credit card required.</p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8fb320fc-75c6-4ac8-a711-e8f712921d02.png" alt="Biki Cloud Gaming Pro app interface showing game streaming on multiple devices" class="rounded-lg shadow-2xl max-w-full h-auto border-4 border-white border-opacity-20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Why Choose Biki Cloud Gaming Pro</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Experience gaming like never before with our revolutionary cloud technology</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 text-2xl w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-3">Instant Play</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">Start playing AAA games in seconds with no downloads or updates required.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-2xl w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-3">Any Device</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">Play on your phone, tablet, laptop, or TV - all your progress syncs automatically.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 text-2xl w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 dark:text-white mb-3">Low Latency</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">Our proprietary streaming tech delivers responsive gaming with minimal lag.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Download Biki Cloud Gaming Pro</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Available on all your favorite platforms</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <!-- Windows -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="platform-icon bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 mb-4">
+                        <i class="fab fa-windows text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Windows</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">10/11 (64-bit)</p>
+                    <a href="#" class="download-btn inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium animate-pulse">
+                        <i class="fas fa-download mr-2"></i> Download
+                        <span class="block text-xs mt-1">v2.3.4 (120MB)</span>
+                    </a>
+                </div>
+                
+                <!-- macOS -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="platform-icon bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300 mb-4">
+                        <i class="fab fa-apple text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">macOS</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">11.0+ (Apple Silicon)</p>
+                    <a href="#" class="download-btn inline-block bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium animate-pulse">
+                        <i class="fas fa-download mr-2"></i> Download
+                        <span class="block text-xs mt-1">v2.3.4 (98MB)</span>
+                    </a>
+                </div>
+                
+                <!-- Android -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="platform-icon bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mb-4">
+                        <i class="fab fa-android text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Android</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">8.0+</p>
+                    <a href="#" class="download-btn inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium animate-pulse">
+                        <i class="fas fa-download mr-2"></i> Download
+                        <span class="block text-xs mt-1">v2.3.4 (45MB)</span>
+                    </a>
+                </div>
+                
+                <!-- Web -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="platform-icon bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 mb-4">
+                        <i class="fas fa-globe text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Web</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">All modern browsers</p>
+                    <a href="#" class="download-btn inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium animate-pulse">
+                        <i class="fas fa-external-link-alt mr-2"></i> Play Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Looking for another platform?</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="#" class="px-4 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition">
+                        <i class="fab fa-linux mr-2"></i> Linux
+                    </a>
+                    <a href="#" class="px-4 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition">
+                        <i class="fab fa-app-store-ios mr-2"></i> iOS
+                    </a>
+                    <a href="#" class="px-4 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition">
+                        <i class="fas fa-tv mr-2"></i> Smart TV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Everything you need to know about Biki Cloud Gaming Pro</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span class="text-lg font-medium text-gray-800 dark:text-white">Is Biki Cloud Gaming Pro really free?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-4 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Yes! Our basic service is completely free with access to a rotating selection of games. We offer optional premium subscriptions for access to our full library and priority servers.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span class="text-lg font-medium text-gray-800 dark:text-white">What are the system requirements?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-4 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Our service is designed to work on almost any modern device:</p>
+                        <ul class="mt-2 space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>- Windows: Windows 10/11 (64-bit)</li>
+                            <li>- macOS: macOS 11+ on Apple Silicon</li>
+                            <li>- Android: Android 8.0+</li>
+                            <li>- Web: Chrome, Firefox, Edge, Safari (latest versions)</li>
+                            <li>- Internet: Minimum 10Mbps download speed (25Mbps recommended for 1080p)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span class="text-lg font-medium text-gray-800 dark:text-white">Can I play with friends?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-4 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Absolutely! Biki Cloud Gaming Pro supports multiplayer for all compatible games. Create parties, invite friends, and play together just like you would on local hardware.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span class="text-lg font-medium text-gray-800 dark:text-white">How does cloud gaming work?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-4 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Cloud gaming runs games on powerful remote servers and streams the video and audio to your device in real-time. Your inputs (controller, keyboard, touch) are sent back to the server instantly, making it feel like you're playing locally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/94afc586-9b29-4929-946c-e3faecc233d5.png" alt="Ashish Gaming Logo" class="h-8 w-8 rounded-full mr-3">
+                        <span class="text-xl font-bold">Ashish Gaming Pro</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">Revolutionizing gaming by bringing high-performance experiences to any device, anywhere.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Product</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">Features</a></li>
+                            <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                            <li><a href="#" class="hover:text-white transition">Download</a></li>
+                            <li><a href="#" class="hover:text-white transition">Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">About</a></li>
+                            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                            <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Ashish Gaming. All rights reserved.</p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-discord text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            
+            // Save preference to localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled' || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('darkMode'))) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle the content
+                content.classList.toggle('hidden');
+                
+                // Rotate the icon
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Platform detection for dynamic download button
+        function detectPlatform() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const downloadContainer = document.getElementById('dynamicDownload');
+            
+            let platform = '';
+            let downloadText = '';
+            let icon = '';
+            let bgColor = 'bg-purple-600';
+            
+            // Windows detection
+            if (/windows|win32|win64/i.test(userAgent)) {
+                platform = 'Windows';
+                downloadText = 'Download for Windows';
+                icon = 'fab fa-windows';
+                bgColor = 'bg-blue-600';
+            }
+            // macOS detection
+            else if (/macintosh|mac os x/i.test(userAgent)) {
+                platform = 'macOS';
+                downloadText = 'Download for Mac';
+                icon = 'fab fa-apple';
+                bgColor = 'bg-gray-800';
+            }
+            // Android detection
+            else if (/android/i.test(userAgent)) {
+                platform = 'Android';
+                downloadText = 'Get on Google Play';
+                icon = 'fab fa-android';
+                bgColor = 'bg-green-600';
+            }
+            // iOS detection
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                platform = 'iOS';
+                downloadText = 'Download on the App Store';
+                icon = 'fab fa-app-store-ios';
+                bgColor = 'bg-purple-600';
+            }
+            // Linux detection (not reliable, but we'll try)
+            else if (/linux/i.test(userAgent)) {
+                platform = 'Linux';
+                downloadText = 'Download for Linux';
+                icon = 'fab fa-linux';
+                bgColor = 'bg-yellow-600';
+            }
+            // Default to Web
+            else {
+                platform = 'Web';
+                downloadText = 'Play in Browser';
+                icon = 'fas fa-globe';
+                bgColor = 'bg-purple-600';
+            }
+            
+            // Create the download button
+            downloadContainer.innerHTML = `
+                <a href="#" class="download-btn ${bgColor} hover:${bgColor.replace('600', '700')} text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center animate-pulse">
+                    <i class="${icon} mr-3 text-xl"></i>
+                    ${downloadText}
+                </a>
+                <a href="#download" class="px-6 py-4 text-white hover:underline">Other Platforms</a>
+            `;
+        }
+        
+        // Run platform detection
+        detectPlatform();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
